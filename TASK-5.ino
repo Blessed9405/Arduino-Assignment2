@@ -16,7 +16,7 @@ byte digits[10][7] = {
   {1, 1, 1, 1, 0, 1, 1},   // 9
 };
 
-// Our own function: show a digit on the display.
+// Our own function to show a digit on the display.
 void showDigit(int n) {
   // For safety: do nothing if the input is outside 0-9.
   if (n < 0 || n > 9) return;
@@ -46,7 +46,7 @@ void setup() {
     showDigit(count);
     tone(buzzerPin, 1000, 200);     // short beep
     delay(1000);
-    count = count - 1;
+    count--;
   }
 
   showDigit(0);
@@ -54,8 +54,6 @@ void setup() {
   Serial.println("=== Countdown Complete  ===");
 
 }
-
-
 
 void loop() {
 
